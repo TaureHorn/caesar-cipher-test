@@ -1,22 +1,40 @@
 body {
-    background-color: #111;
-    text-align: center;
-    margin:5%;
-    margin-left:33%;
-    margin-right:33%;
+    background-color: #0f0f0f;
+    margin: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
+.centre {
+    background: linear-gradient(135deg,
+    rgba(120,120,180,.075),
+    rgba(180,120,120,.075));
+    padding: 5%;
+    border-radius: 2em;
+    margin: 2%;
+}
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    align-items: center;
+    display: block;
 }
 
+.input-container {
+    margin-bottom: 5%;
+}
 
-h1{
-    font-size: 54pt;
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.borders {
+    border-style: ridge;
+    border-color: rgba(100, 100, 100, .7);
+}
+
+h1 {
+    font-size: 48pt;
 }
 
 p,
@@ -26,53 +44,57 @@ input,
 button,
 textarea,
 .radio {
-    color: #7f7f7f;
-    font-family: monospace;    
-}
-
-span {
-    font-size: 32pt;
-    font-weight: 700;
-    width: 100%;
+    color: #bbbbbb;
+    font-family: monospace;
     text-align: center;
 }
 
-p,
-input,
-button,
-textarea {
-    font-size: 22pt;
+
+p {
+    font-size: 14pt;
 }
 
-.radio {
-    background: none;
-    border-style: ridge;
-    height: 2%;
-    display: inline;
+textarea,
+button {
+    font-size: 20pt;
 }
 
 input,
 .borders,
 .button,
 textarea {
-    background: none;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    background: rgba(100, 100, 100, .2);
     border-style: ridge;
-    width: 100%;    
-    height: 5%;
-}
-
-
-button {
-    background: rgba(100,100,100,.5);
-    padding: 2%;
     border-radius: 1em;
-    border-style: ridge;
-    width: 100%;
+    height: 5%;
+    padding: 2%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-button:hover{
-    background-color: rgba(100,100,100,.8);
+input,
+textarea {
+    width: 95.8%;
 }
 
+.button {
+    
+    width: 33%;
+}
+
+.button-blue {
+    background: rgba(120, 120, 180, .5);
+}
+
+.button-red {
+    background: rgba(180,120,120,.5);
+}
+
+button:hover {
+    background-color: rgba(180, 180, 180, .75);
+    border-color: white;
+}
+
+button:active {
+    background-color: rgb(200, 200, 200);
+    border-color: white;
+}
