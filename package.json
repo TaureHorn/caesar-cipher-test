@@ -1,0 +1,19 @@
+{
+  "name": "caesar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "caeser-cipher.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TaureHorn/caesar-cipher-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TaureHorn/caesar-cipher-test/issues"
+  },
+  "homepage": "https://github.com/TaureHorn/caesar-cipher-test#readme"
+}
