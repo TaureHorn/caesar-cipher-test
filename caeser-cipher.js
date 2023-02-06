@@ -1,51 +1,19 @@
 
 // alphabet library = unicode
-const cryptKeyArray = []
+///////////////////////////////////// CAESAR CIPHER ////////////////////////
 
-function keyConv(crypt) {
-    for (let x = 0; x < crypt.length; x++) {
-        cryptKeyArray.push(crypt.charCodeAt(x));
-        // console.log(cryptKeyArray)
-    }
-    return cryptKeyArray;
-}
-////// original ceasar cipher
-function caesarEncrypt(input, cryptkey) {
-    let encrypted = ""
-    for (let i = 0; i < input.length; i++) {
-        let cipherResult = input.charCodeAt(i);
-        let cipherKey = cipherResult + cryptkey;
+// function caesarEncrypt(input, cryptkey) {
+//     let encrypted = ""
+//     for (let i = 0; i < input.length; i++) {
+//         let cipherResult = input.charCodeAt(i);
+//         let cipherKey = cipherResult + cryptkey;
 
-        encrypted = encrypted + String.fromCharCode(cipherKey);
-    }
-    return encrypted
-}
-
-////// cipher with complex key parsing
-function caesarEncryptComplex(input, cryptkey) {
-    let encrypted = ""
-    for (let i = 0; i < input.length; i++) {
-
-        for(let j = 0; j < cryptKeyArray.length; j++) {
-            let cipherResult = input.charCodeAt();
-            cryptKeyArray[]
-            
-        }
-
-
-        // let cipherKey = cipherResult + cryptkey;
-
-        encrypted = encrypted + String.fromCharCode(cipherKey);
-    }
-    return encrypted
-}
-// function caesarDecryption {
+//         encrypted = encrypted + String.fromCharCode(cipherKey);
+//     }
+//     return encrypted
 // }
 
-
-///////////////// console log charCodeAt values because some of the decryptions look a little fucky
-
-// console.log("hello this a caesar cipher, wow! so good at coding lol");
+////////////////////////////// function activation 
 
 // document.addEventListener("keydown", function (event) {
 //     if (event.key === "Enter") {
@@ -67,4 +35,51 @@ function caesarEncryptComplex(input, cryptkey) {
 //         output.innerHTML = "";      
 //         }
 // })
+
+function caesarEncrypt() {
+    let inputVal = document.getElementById("input").value
+    let keyVal = document.getElementById("encryption-key").value
+    let encrypted = ""
+    for (let i = 0; i < inputVal.length; i++) {
+        let cipherResult = inputVal.charCodeAt(i);
+        let cipherKey = cipherResult + keyVal;
+
+        encrypted = encrypted + String.fromCharCode(cipherKey);        
+    }
+    document.getElementById("output-box").innerText = encrypted;
+    inputVal = " ";
+    keyVal = " ";
+}
+
+// function caesarDecryption {
+// }
+
+///////////////////////////////////// CIPHER WITH COMPLEX KEY PARSING ///////////////
+
+// const cryptKeyArray = []
+
+// function keyConv(crypt) {
+//     for (let x = 0; x < crypt.length; x++) {
+//         cryptKeyArray.push(crypt.charCodeAt(x));
+//         // console.log(cryptKeyArray)
+//     }
+//     return cryptKeyArray;
+// }
+// function caesarEncryptComplex(input, cryptkey) {
+//     let encrypted = ""
+//     for (let i = 0; i < input.length; i++) {
+
+//         for(let j = 0; j < cryptKeyArray.length; j++) {
+//             let cipherResult = input.charCodeAt();
+//             cryptKeyArray[]
+            
+//         }
+//         // let cipherKey = cipherResult + cryptkey;
+//         encrypted = encrypted + String.fromCharCode(cipherKey);
+//     }
+//     return encrypted
+// }
+
+// ///////////////// console log charCodeAt values because some of the decryptions look a little fucky
+
 

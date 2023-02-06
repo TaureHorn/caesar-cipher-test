@@ -5,30 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caesar Cipher</title>
-
-    <link rel="stylesheet" src="caesar-cipher.css">
 
     <link id="css" rel="stylesheet" href="caesar-cipher.css">
 
     <script defer src="caeser-cipher.js"></script>
 
+    <title>Caesar Cipher</title>
 </head>
 
 <body>
     <h1> Caesar Cipher</h1>
     <div id="container" class="container">
-    <input id="input" placeholder="input message"></input>
-
-    <input id="encryption-key" placeholder="encryption key"></input>
-
-    <input id="output-box" placeholder="decryption reuslt"></input>
+        <input id="input" placeholder="input text..."></input>
+        <br>
+        <input id="encryption-key" placeholder="encryption key"></input>
+        <br>
+        <!-- <input id="encrypt-select" type="radio" class="radio">
+        <input id="decrypt-select" type="radio" class="radio"> -->
+        <button id="encrypt-decrypt" onclick="caesarEncrypt()"> encrypt/ decrypt </button>
+        <br>
+        <p> encryption / decryption output below...</p>
+        <textarea id="output-box" placeholder="decryption result"></textarea>
+        
     </div>
-
-
-    
-    <button onclick="keyConv()"> </button>
-
 </body>
 
 </html>
