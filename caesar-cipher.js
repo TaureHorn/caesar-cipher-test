@@ -72,7 +72,6 @@ function reset() {
 
 function keyConv(crypt) {
     cryptKeyArray = [];
-    console.log("keyConv is being called")
     for (let x = 0; x < crypt.length; x++) {
         cryptKeyArray.push(crypt.charCodeAt(x));
     }
@@ -82,8 +81,9 @@ function keyConv(crypt) {
 function encrypt() {
     let input = document.getElementById("input").value
     let cryptkey = document.getElementById("encryption-key").value
-    console.log(input, cryptkey)
-    if (cryptkey.length > input.length || input === "") { alert(`key is too long`); console.log(`key is too long`); return null }
+    if (input === "") { alert(`You must input a message to encode / decode`); return null }
+    if (cryptkey === "") { alert(`You must input encryption key to encode / decode`); return null }
+    if (cryptkey.length > input.length) { alert(`key is too long`); console.log(`key is too long`); return null }
     let answer = "";
     keyConv(cryptkey);
     let i = 0;
@@ -111,7 +111,8 @@ function encrypt() {
 function decrypt() {
     let input = document.getElementById("input").value
     let cryptkey = document.getElementById("encryption-key").value
-    console.log(input, cryptkey)
+    if (input === "") { alert(`You must input a message to encode / decode`); return null }
+    if (cryptkey === "") { alert(`You must input encryption key to encode / decode`); return null }
     if (input === null || cryptkey.length > input.length) { alert(`key is too long / too short`); console.log(`key is too long`); return null }
     let decryptedAnswer = "";
     keyConv(cryptkey);
