@@ -49,10 +49,14 @@ function themeChange(theme) {
 
 function copyText() {
     let copyText = document.getElementById("result");
-    console.log(copyText.value)
-    navigator.clipboard.writeText(copyText.value);
-    alert("Copied "  + `${copyText.value}` + " to the clipboard")
-    document.getElementById("result").value = '';
+    if (copyText.value === "") {
+        alert("There's nothing there to copy.")
+    } else {
+        navigator.clipboard.writeText(copyText.value);
+        alert("Copied " + `${copyText.value}` + " to the clipboard")
+        document.getElementById("result").value = '';
+
+    }
 }
 
 
