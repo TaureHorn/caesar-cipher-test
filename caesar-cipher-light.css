@@ -1,0 +1,110 @@
+body {
+    background-color: rgb(230,230,230);
+    margin: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.centre {
+    background: linear-gradient(135deg,
+    rgba(120,120,180,.075),
+    rgba(180,120,120,.075));
+    padding: 5%;
+    border-radius: 2em;
+    margin: 2%;
+}
+
+.container {
+    display: block;
+}
+
+.input-container {
+    margin-bottom: 5%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.borders {
+    border-style: ridge;
+    border-color: rgba(200, 200, 200, .7);
+}
+
+h1 {
+    font-size: 48pt;
+}
+
+h2 {
+    font-size: 24pt;
+}
+
+p,
+h1,
+h2,
+button,
+textarea {
+    color: rgb(100,100,100);
+    font-family: monospace;
+    text-align: center;
+}
+
+
+p {
+    font-size: 14pt;
+}
+
+textarea,
+button {
+    font-size: 16pt;
+}
+
+input,
+.borders,
+.button,
+textarea {
+    background: rgba(255, 255, 255, .3);
+    border-style: ridge;
+    border-radius: 1em;
+    height: 5%;
+    padding: 1%;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+}
+
+.border-thin {
+    border-style: solid;
+    border-radius: 1em;
+    border-color: rgb(210,210,210);
+    margin-bottom: 2%;
+    padding: 2%;
+}
+
+input,
+textarea {
+    width: 95.8%;
+}
+
+.button {
+    
+    width: 33%;
+}
+
+.button-blue {
+    background: rgba(120, 120, 180, .5);
+}
+
+.button-red {
+    background: rgba(180,120,120,.5);
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, .75);
+    border-color: white;
+}
+
+button:active {
+    background-color: rgb(200, 200, 200);
+    border-color: white;
+}
