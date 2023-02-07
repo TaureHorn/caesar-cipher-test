@@ -47,12 +47,19 @@ function themeChange(theme) {
 //     // (document.getElementById(section).value);
 // }
 
+function copyText() {
+    let copyText = document.getElementById("result");
+    console.log(copyText.value)
+    navigator.clipboard.writeText(copyText.value);
+    alert("Copied "  + `${copyText.value}` + " to the clipboard")
+    document.getElementById("result").value = '';
+}
 
 
 function reset() {
     document.getElementById("input").value = '';
     document.getElementById("encryption-key").value = '';
-    document.getElementById("result").innerHTML = '';
+    document.getElementById("result").value = '';
     cryptKeyArray = []
 }
 
@@ -68,33 +75,6 @@ function keyConv(crypt) {
     return cryptKeyArray;
 }
 
-// function encrypt() {
-//     let input = document.getElementById("input").value
-//     let cryptkey = document.getElementById("encryption-key").value
-//     console.log(input, cryptkey)
-//     if (cryptkey.length > input.length || input === "") { alert(`key is too long`); console.log(`key is too long`); return null }
-//     let answer = "";
-//     keyConv(cryptkey);
-//     let i = 0;
-//     while (i <= input.length) {
-//         let j = 0;
-//         for (j = 0; j < cryptKeyArray.length; j++) {
-//             if (i === input.length) {
-//                 document.getElementById("result").innerHTML = `${answer}`;
-//                 console.log(answer)
-//                 return answer
-//             }
-//             let cipherResult = input.charCodeAt(i) - cryptKeyArray[j];
-//             if (cipherResult <= 33) {
-//                 cipherResult += 93
-//             }
-//             answer += String.fromCharCode(cipherResult);
-//             i++;
-//         }
-//     }
-// }
-
-
 function encrypt() {
     let input = document.getElementById("input").value
     let cryptkey = document.getElementById("encryption-key").value
@@ -107,7 +87,7 @@ function encrypt() {
         let j = 0;
         for (j = 0; j < cryptKeyArray.length; j++) {
             if (i === input.length) {
-                document.getElementById("result").innerHTML = `${answer}`;
+                document.getElementById("result").value = `${answer}`;
                 console.log(answer)
                 return answer
             }
@@ -124,39 +104,11 @@ function encrypt() {
     }
 }
 
-
-// function decrypt() {
-//     let input = document.getElementById("input").value
-//     let cryptkey = document.getElementById("encryption-key").value
-//     console.log(input, cryptkey)
-//     if (input === null || cryptkey.length > input.length) { alert(`key is too long`); console.log(`key is too long`); return null }
-//     let decryptedAnswer = "";
-//     keyConv(cryptkey);
-//     let i = 0;
-//     while (i <= input.length) {
-//         let j = 0;
-//         for (j = 0; j < cryptKeyArray.length; j++) {
-//             if (i === input.length) {
-//                 document.getElementById("result").innerHTML = `${decryptedAnswer}`;
-//                 console.log(decryptedAnswer)
-//                 return decryptedAnswer
-//             }
-//             let cipherResult = input.charCodeAt(i) + cryptKeyArray[j];
-//             if (cipherResult >= 125) {
-//                 cipherResult -= 93
-//             }
-//             decryptedAnswer += String.fromCharCode(cipherResult);
-//             i++;
-//         }
-//     }
-// }
-
-
 function decrypt() {
     let input = document.getElementById("input").value
     let cryptkey = document.getElementById("encryption-key").value
     console.log(input, cryptkey)
-    if (input === null || cryptkey.length > input.length) { alert(`key is too long`); console.log(`key is too long`); return null }
+    if (input === null || cryptkey.length > input.length) { alert(`key is too long / too short`); console.log(`key is too long`); return null }
     let decryptedAnswer = "";
     keyConv(cryptkey);
     let i = 0;
@@ -164,7 +116,7 @@ function decrypt() {
         let j = 0;
         for (j = 0; j < cryptKeyArray.length; j++) {
             if (i === input.length) {
-                document.getElementById("result").innerHTML = `${decryptedAnswer}`;
+                document.getElementById("result").value = `${decryptedAnswer}`;
                 console.log(decryptedAnswer)
                 return decryptedAnswer
             }
