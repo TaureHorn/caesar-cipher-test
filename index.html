@@ -6,48 +6,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link id="css" rel="stylesheet" href="caesar-cipher.css">
+    <link id="css" rel="stylesheet" href="caesar-cipher_dark.css">
 
-    <script defer src="caeser-cipher.js"></script>
+    <script defer src="caesar-cipher.js"></script>
 
     <title>Caesar Cipher</title>
 </head>
 
 <body>
-    <div class="centre">
+    <div class="">
         <h1> Caesar Cipher</h1>
     </div>
     <div id="centre-background" class="centre">
-        <div id="input-container" class="input-container">
-            <p style="text-align:left"> Input the text you want to encrypt / decrypt below...</p>
-            <textarea id="input" class="borders" placeholder="input text..."></textarea>
-            <p style="text-align:left"> And now input a number as your encryption / decryption key...</p>
-            <textarea id="encryption-key" class="borders" placeholder="encryption key (number)"></textarea>
+        <div id="start-container" class="border-thin">
+            <h2 style="text-align:left">Input</h2>
+            <div id="input-container" class="input-container">
+                <p style="text-align:left"> Input the text you want to encrypt / decrypt below...</p>
+                <textarea id="input" class="borders" placeholder="input"></textarea>
+             <p style="text-align:left"> And now input a number as your encryption / decryption key...</p>
+                <textarea id="encryption-key" class="borders" placeholder="encryption key"></textarea>
+             
+            </div>
+            <div id="buttons" class="input-container button-container">
+                <button id="encode text" class="button button-blue borders"
+                    onmouseenter="buttonHover(toggleExplainer[0])" onmouseleave="buttonHover(toggleExplainer[0])"
+                    onclick="encrypt()">encode
+                    text</button>
+                <button id="decode text" class="button button-blue borders"
+                    onmouseenter="buttonHover(toggleExplainer[1])" onmouseleave="buttonHover(toggleExplainer[1])"
+                    onclick="decrypt()">decode
+                    text</button>
+            </div>
+            <p id="explainer-hint"> Hover over the encode / decode button to see a quick explainer.</p>
+            <p id="encode-explainer" style="display: none">Encode a plaintext message into a string of encoded
+                data
+                based on chosen key.</p>
+            <p id="decode-explainer" style="display: none">Decode an encoded message into plaintext based on
+                pre-defined encryption key. </p>
         </div>
-        <div id="buttons" class="input-container button-container">
-            <button id="encode text" class="button button-blue borders" onmouseenter="buttonHover(toggleExplainer[0])"
-                onmouseleave="buttonHover(toggleExplainer[0])" onclick="encryptLetters()">encode
-                text *</button>
-            <button id="decode text" class="button button-blue borders" onmouseenter="buttonHover(toggleExplainer[1])"
-                onmouseleave="buttonHover(toggleExplainer[1])" onclick="decryptLetters()">decode
-                text *</button>
-        </div>
-        <div class="input-container">
-            <textarea id="output-box" class="borders" placeholder="decryption result"></textarea>
-        </div>
+        <div id="end-container" class="border-thin">
+            <h2 style="text-align:left">Output</h2>
+            <div class="input-container" class="borders">
+                <p id="result" class="borders" style="font-size: 32pt;" placeholder="encrypt / decrypt result"> </p>
+            </div>
 
-        <div id="buttons" class="input-container button-container">
-            <button id="rest" class="button button-red borders" onclick="reset()">
-                reset
-            </button>
-        </div>
 
-        <p id="explainer-hint" style="font-size:32pt">*</p>
-        <p id="encode-explainer" style="display: none; color:#fff">Encode a plaintext message into a string of encoded
-            data
-            based on chosen key.</p>
-        <p id="decode-explainer" style="display: none; color:#fff">Decode an encoded message into plaintext based on
-            pre-defined encryption key. </p>
+            <div id="buttons" class="input-container button-container">
+                <button id="theme" class="button borders" style="background:none;" onclick="copyText()"> copy
+                    output</button>
+                <button id="reset" class="button button-red borders" onclick="reset()">
+                    reset </button>
+            </div>
+        </div>
+        <div id="misc-container" class="border-thin">
+            <h2 style="text-align:left">Theme</h2>
+
+
+            <div id="buttons" class="input-container button-container" style="justify-content:space-around;">
+                <button id="theme" class="button button-blue borders" style="background:none"
+                    onclick="themeChange(themeSet[1])"> Light theme</button>
+                <button id="theme" class="button button-blue borders" style="background:none"
+                    onclick="themeChange(themeSet[0])"> Dark theme</button>
+
+            </div>
+        </div>
     </div>
 </body>
 

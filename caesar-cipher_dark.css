@@ -1,8 +1,8 @@
 body {
     background-color: #0f0f0f;
     margin: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .centre {
@@ -37,13 +37,15 @@ h1 {
     font-size: 48pt;
 }
 
+h2 {
+    font-size: 24pt;
+}
+
 p,
-span,
 h1,
-input,
+h2,
 button,
-textarea,
-.radio {
+textarea {
     color: #bbbbbb;
     font-family: monospace;
     text-align: center;
@@ -56,7 +58,7 @@ p {
 
 textarea,
 button {
-    font-size: 20pt;
+    font-size: 16pt;
 }
 
 input,
@@ -70,6 +72,15 @@ textarea {
     padding: 2%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
+
+.border-thin {
+    border-style: solid;
+    border-radius: 1em;
+    padding: 2%;
+    border-color: rgb(80,80,80);
+    margin-bottom: 2%
+}
+
 
 input,
 textarea {
